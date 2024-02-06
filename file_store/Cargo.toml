@@ -27,7 +27,7 @@ lazy_static = {workspace = true}
 tracing = { workspace = true }
 chrono = { workspace = true }
 helium-proto = {workspace = true}
-helium-crypto = {workspace = true}
+helium-crypto = {git = "https://github.com/helium/helium-crypto-rs", branch = "main"}
 csv = "*"
 http = {workspace = true}
 aws-config = "0.51"
