@@ -21,4 +21,4 @@ serde = { workspace = true }
 serde_json = { workspace = true }
 config = { workspace = true }
 chrono = { workspace = true }
-xorf-generator = { git = "https://github.com/helium/xorf-generator", branch = "main" }
+xorf-generator = { git = "https://github.com/syuan100/xorf-generator", branch = "main" }

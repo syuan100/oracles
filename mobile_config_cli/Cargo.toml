@@ -7,13 +7,13 @@ authors.workspace = true
 license.workspace = true
 
 [dependencies]
-angry-purple-tiger = {version = "1", features = ["helium_crypto"]}
+angry-purple-tiger = {git = "https://github.com/syuan100/angry-purple-tiger-rs", branch = "main", features = ["helium_crypto"]}
 anyhow = {workspace = true}
 base64 = {workspace = true}
 clap = {workspace = true, features = ["derive", "env"]}
 dialoguer = "0.10"
 futures = {workspace = true}
-helium-crypto = {workspace = true}
+helium-crypto = {git = "https://github.com/helium/helium-crypto-rs", branch = "main"}
 helium-proto = {workspace = true}
 h3o = {workspace = true}
 mobile-config = {path = "../mobile_config"}

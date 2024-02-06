@@ -377,12 +377,11 @@ dependencies = [
 [[package]]
 name = "angry-purple-tiger"
 version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7556be6f2b0d82376c1ece1fda4dffd728816ac53bee2c285f3f74269ddc4a97"
+source = "git+https://github.com/syuan100/angry-purple-tiger-rs?branch=main#71b676aebc02ad309cbb8e7471949026b369ed40"
 dependencies = [
  "anyhow",
  "clap 4.4.8",
- "helium-crypto 0.8.1",
+ "helium-crypto",
  "md5",
 ]
 
@@ -517,19 +516,6 @@ name = "assert_matches"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9b34d609dfbaf33d6889b2b7106d3ca345eacad44200913df5ba02bfd31d2ba9"
-
-[[package]]
-name = "async-compression"
-version = "0.3.15"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "942c7cd7ae39e91bde4820d74132e9862e62c2f386c3aa90ccf55949f5bad63a"
-dependencies = [
- "flate2",
- "futures-core",
- "memchr",
- "pin-project-lite",
- "tokio",
-]
 
 [[package]]
 name = "async-compression"
@@ -2168,7 +2154,7 @@ dependencies = [
  "bytes",
  "chrono",
  "config",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "reqwest",
  "serde",
  "serde_json",
@@ -2368,7 +2354,7 @@ dependencies = [
  "der",
  "elliptic-curve",
  "rfc6979",
- "signature",
+ "signature 1.4.0",
 ]
 
 [[package]]
@@ -2377,17 +2363,26 @@ version = "1.5.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "91cff35c70bba8a626e3185d8cd48cc11b5437e1a5bcd15b9b5fa3c64b6dfee7"
 dependencies = [
- "signature",
+ "signature 1.4.0",
+]
+
+[[package]]
+name = "ed25519"
+version = "2.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "60f6d271ca33075c88028be6f04d502853d63a5ece419d269c15315d4fc1cf1d"
+dependencies = [
+ "signature 2.2.0",
 ]
 
 [[package]]
 name = "ed25519-compact"
-version = "2.0.4"
+version = "2.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a3d382e8464107391c8706b4c14b087808ecb909f6c15c34114bc42e53a9e4c"
+checksum = "e9b3460f44bea8cd47f45a0c70892f1eff856d97cd55358b2f73f663789f6190"
 dependencies = [
  "ct-codecs",
- "ed25519",
+ "ed25519 2.2.2",
  "getrandom 0.2.10",
 ]
 
@@ -2398,7 +2393,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c762bae6dcaf24c4c84667b8579785430908723d5c889f469d76a41d59cc7a9d"
 dependencies = [
  "curve25519-dalek",
- "ed25519",
+ "ed25519 1.5.3",
  "rand 0.7.3",
  "serde",
  "sha2 0.9.9",
@@ -2562,7 +2557,7 @@ name = "file-store"
 version = "0.1.0"
 dependencies = [
  "anyhow",
- "async-compression 0.3.15",
+ "async-compression",
  "async-trait",
  "aws-config",
  "aws-sdk-s3",
@@ -2579,7 +2574,7 @@ dependencies = [
  "futures",
  "futures-util",
  "h3o",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "hex-literal",
  "http",
@@ -3036,9 +3031,8 @@ dependencies = [
 
 [[package]]
 name = "helium-crypto"
-version = "0.8.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a5cff2c83e56f92211d867fbb233d700039deddf293beea7fecf99561f3bebb3"
+version = "0.8.3"
+source = "git+https://github.com/helium/helium-crypto-rs?branch=main#79d1f905edda9d70d2fe013d73aabd9a2e16d883"
 dependencies = [
  "base64 0.21.0",
  "bs58 0.5.0",
@@ -3053,29 +3047,7 @@ dependencies = [
  "rsa",
  "serde",
  "sha2 0.10.6",
- "signature",
- "thiserror",
-]
-
-[[package]]
-name = "helium-crypto"
-version = "0.8.3"
-source = "git+https://github.com/helium/helium-crypto-rs?branch=main#79d1f905edda9d70d2fe013d73aabd9a2e16d883"
-dependencies = [
- "base64 0.21.0",
- "bs58 0.5.0",
- "byteorder",
- "ed25519-compact",
- "getrandom 0.1.16",
- "k256",
- "lazy_static",
- "multihash",
- "p256",
- "rand_core 0.6.4",
- "rsa",
- "serde",
- "sha2 0.10.6",
- "signature",
+ "signature 1.4.0",
  "solana-sdk",
  "sqlx",
  "thiserror",
@@ -3435,7 +3407,7 @@ dependencies = [
  "file-store",
  "futures",
  "futures-util",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "http",
  "metrics",
@@ -3491,7 +3463,7 @@ dependencies = [
  "file-store",
  "futures",
  "futures-util",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "hextree",
  "http",
@@ -3531,7 +3503,7 @@ dependencies = [
  "file-store",
  "futures",
  "futures-util",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "http",
  "http-serde",
@@ -3571,7 +3543,7 @@ dependencies = [
  "futures",
  "futures-util",
  "h3o",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "http-serde",
  "iot-config",
@@ -4125,7 +4097,7 @@ dependencies = [
  "file-store",
  "futures",
  "futures-util",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "hextree",
  "http",
@@ -4162,7 +4134,7 @@ dependencies = [
  "dialoguer",
  "futures",
  "h3o",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "mobile-config",
  "prost",
@@ -4197,7 +4169,7 @@ dependencies = [
  "file-store",
  "futures",
  "futures-util",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "http",
  "http-serde",
@@ -4235,7 +4207,7 @@ dependencies = [
  "futures",
  "futures-util",
  "h3o",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "hextree",
  "http-serde",
@@ -4748,7 +4720,7 @@ dependencies = [
  "file-store",
  "futures",
  "futures-util",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "http",
  "hyper",
@@ -5278,7 +5250,7 @@ version = "0.11.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "046cd98826c46c2ac8ddecae268eb5c2e58628688a5fc7a2643704a73faba95b"
 dependencies = [
- "async-compression 0.4.5",
+ "async-compression",
  "base64 0.21.0",
  "bytes",
  "encoding_rs",
@@ -5341,7 +5313,7 @@ dependencies = [
  "file-store",
  "futures",
  "futures-util",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "helium-proto",
  "lazy_static",
  "metrics",
@@ -5899,6 +5871,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "signature"
+version = "2.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77549399552de45a898a580c1b41d445bf730df867cc44e6c0233bbc4b8329de"
+dependencies = [
+ "rand_core 0.6.4",
+]
+
+[[package]]
 name = "simple_asn1"
 version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5972,7 +5953,7 @@ dependencies = [
  "clap 4.4.8",
  "futures",
  "helium-anchor-gen",
- "helium-crypto 0.8.3",
+ "helium-crypto",
  "metrics",
  "serde",
  "sha2 0.10.6",
@@ -7958,8 +7939,8 @@ dependencies = [
 
 [[package]]
 name = "xorf-generator"
-version = "0.6.0"
-source = "git+https://github.com/helium/xorf-generator?branch=main#d55057c88a0e6f40adfeae15197afa66729fb3d5"
+version = "0.7.0"
+source = "git+https://github.com/syuan100/xorf-generator?branch=main#746606486c213bce3d4bbf2acb169aa4e61af92b"
 dependencies = [
  "anyhow",
  "base64 0.21.0",
@@ -7968,14 +7949,14 @@ dependencies = [
  "clap 4.4.8",
  "csv",
  "flate2",
- "helium-crypto 0.8.1",
+ "helium-crypto",
  "indexmap 2.0.2",
  "prost",
  "prost-build",
  "rand 0.8.5",
  "serde",
  "serde_json",
- "sha2 0.10.6",
+ "sha2 0.9.9",
  "thiserror",
  "twox-hash",
  "xorf",
